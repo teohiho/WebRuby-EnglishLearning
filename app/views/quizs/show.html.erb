@@ -17,13 +17,13 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-	
+
+
 	<!--<script type="text/javascript" src="js/quiz.js"></script>-->
 <!-- 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 	<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script> -->
-  
-	
+
+
 </head> -->
 <body>
     <div class="wrapper">
@@ -33,7 +33,7 @@
 				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>                        
+					<span class="icon-bar"></span>
 				  </button>
 				  <a class="navbar-brand" href="framgia.html">Framgia E-Learning</a>
 				</div>
@@ -52,11 +52,11 @@
 						<li><a href="#">Blog</a></li>
 						<li><a href="#">Contact us</a></li>
 					</ul>
-				  
+
 					<form>
 						<input class="navbar-form navbar-left" type="text" name="search" placeholder="Search..">
 					</form>
-				  
+
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -65,13 +65,13 @@
 			</div>
 		</nav>
 		<div class="clr"></div>
-		
-		
+
+
 		<div class="container">
 			<div class="row">
 				<!--Left bar-->
 				<div class="col-lg-3">
-					
+
 					<div class="user-infor">
 						<img src="/assets/teoteoteo.jpg" class="img-circle" alt="Cinque Terre">
 						<div id="user-name">
@@ -84,15 +84,15 @@
 									Bạn cần ><b>100</b> điểm nữa để có thể lọt vào top 10
 								</div>
 							</div>
-							
+
 						</div>
-					</div>				
-					
+					</div>
+
 					<div class="advertisement">
 						<a href="http://tienganhtreem.net.vn/tin-tuc/uu-dai-khoa-hoc-be-tu-tin-giao-tiep-tieng-anh.html"><img src="/assets/anh7.jpg" alt="quangcao" /></a>
-						
+
 						<a href="http://tienganhtreem.net.vn/tin-tuc/uu-dai-khoa-hoc-be-tu-tin-giao-tiep-tieng-anh.html"><img src="/assets/anh8.jpg" alt="quangcao" /></a>
-						
+
 						<!--Footer-->
 						<div class="footer">
 							<div class="logo-footer">
@@ -101,9 +101,9 @@
 							<div class="follow-us">
 								<p>
 									Theo dõi chúng tôi
-								</p>								
+								</p>
 								<a href="#" class="fa fa-facebook"></a>
-								<a href="#" class="fa fa-youtube"></a>		
+								<a href="#" class="fa fa-youtube"></a>
 							</div>
 							<div class="copyright">
 								<p>
@@ -111,20 +111,20 @@
 								</p>
 							</div>
 						</div>
-					
+
 					</div>
-					
-					
+
+
 				</div>
 				<!--Right bar-->
-				<div class="col-lg-9">					
+				<div class="col-lg-9">
 					<div class="box-item2">
 						<!-- <div id="noi_dung_de" style='display:none;'>
 							teacher:;[giáo viên;quản ngục;nhà triết học, triết gia;chuyên viên thống kê.|
 							bike:;chủ/người làm ở trại chăn nuôi;giá biểu;tàn tích;[xe đạp
 						</div> -->
-						<form method='post' id='quiz_form'>
-							
+						<form method='post' id='quiz_form' data-remote="true" action="/quizs/submit">
+
 						<!--	<% i = 1%>
 							<% @answer.each do |answer| %>
 							<%=answer%>
@@ -140,18 +140,18 @@
 										<input type="radio" value="1" id='radio1_<%= vocabulary.id%>' name='answer<%=i%>'>
 										<label id='ans1_<%=vocabulary.id%>' for='1'><%=vocabulary.mean1%></label>
 									</div>
-									
-									
+
+
 									<div class="answer">
 										<input type="radio" value="2" id='radio2_<%=vocabulary.id%>' name='answer<%=i%>'>
 										<label id='ans2_<%=vocabulary.id%>' for='1'><%=vocabulary.mean2%></label>
 									</div>
-									
+
 									<div class="answer">
 										<input type="radio" value="3" id='radio3_<%=vocabulary.id%>' name='answer<%=i%>'>
 										<label id='ans3_<%=vocabulary.id%>' for='1'><%=vocabulary.mean3%></label>
 									</div>
-									
+
 									<div class="answer">
 										<input type="radio" value="4" id='radio4_<%=vocabulary.id%>' name='answer<%=i%>'>
 										<label id='ans4_<%=vocabulary.id%>' for='1'><%=vocabulary.mean4%></label>
@@ -164,7 +164,7 @@
 							<% i = i+1%>
 							<% end%>
 							<div id="answer-error"></div>
-							<button class="submit-body" type="button"  onclick="submit()">Send</button> 
+							<button class="submit-body" type="submit">Send</button>
 							<div id="answer-error"></div>
 							<div id='result'></div>
 
@@ -172,7 +172,7 @@
 					<div class="quiz-item" title="id cua quiz">
 						<div class="quiz-body">What is the meaning of 1</div>
 						<div class="answer-body">
-					
+
 							<div class="answer">
 								<input type="radio" name="answer1" value="1"><span class="answer-content">teacher</span>
 							</div>
@@ -181,7 +181,7 @@
 					</div>
 
 					<div id="answer-error">
-						
+
 					</div>
 					<button class="submit-body" type="button" onclick="submit()">	Send
 					</button>
@@ -189,7 +189,7 @@
 
 
 						</form>
-					</div>				
+					</div>
 				</div>
 
 				<script type="text/javascript" src="/assets/jquery-3.2.1.min.js"></script>
@@ -198,9 +198,9 @@
 				<script>
 				$(document).ready(function(){
 					// alert("asb");
-					
+
 				    var steps = $('form').find(".questions");	//lay object cau hoi
-				    var count = steps.length;	
+				    var count = steps.length;
 				    console.log("absdsd");				//so cau hoi
 				    steps.each(function(i){						//moi cau hoi//1,2,3,4,. //cach cau hoi 1 dau tien //co id=0
 				        console.log(i);
@@ -213,17 +213,17 @@
 				            var step=i + 1;
 				            //$("#next"+step).attr('type','submit');
 				            $("#next"+step).on('click',function(){		//thi submit cai next
-				 
+
 				               submit();
-				 
+
 				            });
 				        }
 				        else{
 				            $("#question_" + hider).hide();
 				            createNextButton(i);
 				        }
-				        
-				 
+
+
 				    });
 
 
@@ -234,35 +234,7 @@
 					}
 
 				    function submit(){
-				   //  	var selectedQuiz = $('#quiz_form').eq(0).find('.questions');
-				   // 		console.log("abc");
-				   // 		var answer = [];
-				   // 		console.log(selectedQuiz.length);
-				   // 		for(var cnt = 1; cnt <= selectedQuiz.length; cnt++){
-				   // 			var selectedAnwser = selectedQuiz.eq(cnt).find('input[name=answer' + cnt + ']:checked');
 
-				   // 			if(selectedAnwser.length > 0){
-							// 	answer[selectedQuiz.eq(cnt).attr('title')] = parseInt(selectedAnwser.eq(1).val());
-							// }
-							// else {
-							// 	answer[selectedQuiz.eq(cnt).attr('title')] = -1;
-							// 	error.answer("You must select one answer first");
-							// }
-							// console.log(answer);
-							// console.log(answer);
-
-				   // 		}
-				         $.ajax({
-	                        type: "POST",
-	                        url: "/quizs/show",
-	                        data: $('form').serialize(),
-	                        success: function(msg) {
-	                          $("#quiz_form").addClass("hide");
-	                          $('#result').show();
-	                          $('#result').append(msg);
-	                        }
-				         });
-				 
 				    }
 				    function createNextButton(i){
 				        var step = i + 1;
@@ -315,9 +287,9 @@
 						}
 					}
 				</script>-->
-				
+
 				 <!-- <script>
-					
+
 					var nd = $("#noi_dung_de").html();
 					var cau_hoi = nd.split('|');		//2: số câu
 					//alert(cau_hoi.length);
@@ -331,7 +303,7 @@
 
 							if (j==0){
 								html +="<tr><td><b>" + (i+1) +"/15"+ ":</b></td><td> <b>" + chi_tiet[j].trim() + "</b></td></tr>";	//lấy phần tử đầu tiên trong mảng
-							}else 
+							}else
 							{
 							html += "<tr><td></td><td id='" + (i + 1 + String.fromCharCode(64 + j)) + "'><input type='checkbox' name='" + (i + 1 + String.fromCharCode(64 + j)) + "' value='" + chi_tiet[j].trim() +"'> " + String.fromCharCode(64 + j) + ". " + chi_tiet[j].replace("[","").trim() + "</td></tr>";
 							//alert(i + 1 + String.fromCharCode(64 + j ))		//1A, 1B, 1C, 1D, 2A, 2B, 2C, 2D
@@ -340,14 +312,14 @@
 					}
 
 					$("#noi_dung_de").empty().append("<table>" + html + "</table><input type='submit' value='Hoàn tất' id='tra_loi_xong'>").fadeIn();
-					$("#noi_dung_de input").click(function(){ 
+					$("#noi_dung_de input").click(function(){
 						//Lấy tên của checkbox
 						var id = $(this).attr("name");
 
 						//Đổi màu nền câu trả lời
 
 						if ($(this).is(":checked")) $("td#" + id).css("background-color","yellow");
-						else $("td#" + id).css("background-color",""); 
+						else $("td#" + id).css("background-color","");
 					});
 
 					var tong_so_diem = 0;
@@ -357,7 +329,7 @@
 							var ctl = $(this).val();
 
 							//Hiển thị câu đúng với nền là màu đỏ
-							if (ctl[0] == '[') 
+							if (ctl[0] == '[')
 							{
 								//alert($("td#" + id).css("background-color"));
 								if ($("td#" + id).css("background-color") == "rgb(255, 255, 0)")
@@ -374,7 +346,7 @@
 									}
 								}
 								else
-								{ 
+								{
 								$("td#" + id).css("background-color","red");
 								}
 							}
@@ -386,11 +358,11 @@
 				</script>  -->
 			</div>
 		</div>
-		
-	
+
+
 		<div class="clr"></div>
-		
+
 	</div>
-	
+
 </body>
 </html>
