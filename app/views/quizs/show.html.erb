@@ -1,0 +1,396 @@
+<!-- <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Framgia E-Learning</title>
+
+    <link type="text/css" rel="stylesheet" href="/assets/reset.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/style.css" />
+	<link type="text/css" rel="stylesheet" href="" ="/assets/bootstrap-theme.min.css">
+    <link type="text/css" rel="stylesheet" href="" ="/assets/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/bootstrap.css">
+
+
+	<script type="text/javascript" src="/assets/jquery-3.2.1.min.js"></script>
+	<script src="/assets/bootstrap.min.js"></script>
+	<script src="/assets/bootstrap.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+	
+	<!--<script type="text/javascript" src="js/quiz.js"></script>-->
+<!-- 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script> -->
+  
+	
+</head> -->
+<body>
+    <div class="wrapper">
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				  </button>
+				  <a class="navbar-brand" href="framgia.html">Framgia E-Learning</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li><a href="framgia.html">Home</a></li>
+						<li class="active" class="dropdown">
+						  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses <span class="caret"></span></a>
+						  <ul class="dropdown-menu">
+							<li><a href="vocabulary.html">Từ vựng sơ cấp</a></li>
+							<li><a href="vocabulary.html">Từ vựng trung cấp</a></li>
+							<li><a href="vocabulary.html">Từ vựng ngành CNTT</a></li>
+							<li><a href="vocabulary.html">Từ lóng</a></li>
+						  </ul>
+						</li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Contact us</a></li>
+					</ul>
+				  
+					<form>
+						<input class="navbar-form navbar-left" type="text" name="search" placeholder="Search..">
+					</form>
+				  
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="clr"></div>
+		
+		
+		<div class="container">
+			<div class="row">
+				<!--Left bar-->
+				<div class="col-lg-3">
+					
+					<div class="user-infor">
+						<img src="/assets/teoteoteo.jpg" class="img-circle" alt="Cinque Terre">
+						<div id="user-name">
+							<h4>Thu Hien</h4>
+							<div class="row">
+								<div class="col-7 col-sm-5">
+									<b><p id="rcorners3">100<br/><span>điểm</span></p></b>
+								</div>
+								<div class="col-8 col-sm-6">
+									Bạn cần ><b>100</b> điểm nữa để có thể lọt vào top 10
+								</div>
+							</div>
+							
+						</div>
+					</div>				
+					
+					<div class="advertisement">
+						<a href="http://tienganhtreem.net.vn/tin-tuc/uu-dai-khoa-hoc-be-tu-tin-giao-tiep-tieng-anh.html"><img src="/assets/anh7.jpg" alt="quangcao" /></a>
+						
+						<a href="http://tienganhtreem.net.vn/tin-tuc/uu-dai-khoa-hoc-be-tu-tin-giao-tiep-tieng-anh.html"><img src="/assets/anh8.jpg" alt="quangcao" /></a>
+						
+						<!--Footer-->
+						<div class="footer">
+							<div class="logo-footer">
+								<h3><a href="" title="">Framgia E-Learning</a></h3>
+							</div>
+							<div class="follow-us">
+								<p>
+									Theo dõi chúng tôi
+								</p>								
+								<a href="#" class="fa fa-facebook"></a>
+								<a href="#" class="fa fa-youtube"></a>		
+							</div>
+							<div class="copyright">
+								<p>
+									&copy; 2018 Framgia E-Learning <br /> Web Design: Hien Ho.
+								</p>
+							</div>
+						</div>
+					
+					</div>
+					
+					
+				</div>
+				<!--Right bar-->
+				<div class="col-lg-9">					
+					<div class="box-item2">
+						<!-- <div id="noi_dung_de" style='display:none;'>
+							teacher:;[giáo viên;quản ngục;nhà triết học, triết gia;chuyên viên thống kê.|
+							bike:;chủ/người làm ở trại chăn nuôi;giá biểu;tàn tích;[xe đạp
+						</div> -->
+						<form method='post' id='quiz_form'>
+							
+						<!--	<% i = 1%>
+							<% @answer.each do |answer| %>
+							<%=answer%>
+							<% end %>-->
+
+
+							<% i = 1%>
+							<% @vocabularies.each do |vocabulary| %>
+							<div id='question_<%=vocabulary.id%>' class='questions'>
+								<h2 id="question_<%=vocabulary.id%>"><%=vocabulary.word%></h2>
+								<div class='align'>
+									<div class="answer">
+										<input type="radio" value="1" id='radio1_<%= vocabulary.id%>' name='answer<%=i%>'>
+										<label id='ans1_<%=vocabulary.id%>' for='1'><%=vocabulary.mean1%></label>
+									</div>
+									
+									
+									<div class="answer">
+										<input type="radio" value="2" id='radio2_<%=vocabulary.id%>' name='answer<%=i%>'>
+										<label id='ans2_<%=vocabulary.id%>' for='1'><%=vocabulary.mean2%></label>
+									</div>
+									
+									<div class="answer">
+										<input type="radio" value="3" id='radio3_<%=vocabulary.id%>' name='answer<%=i%>'>
+										<label id='ans3_<%=vocabulary.id%>' for='1'><%=vocabulary.mean3%></label>
+									</div>
+									
+									<div class="answer">
+										<input type="radio" value="4" id='radio4_<%=vocabulary.id%>' name='answer<%=i%>'>
+										<label id='ans4_<%=vocabulary.id%>' for='1'><%=vocabulary.mean4%></label>
+									</div>
+									<!-- <input type="radio" checked='checked' value="5" style='display:none' id='radio4_<%=vocabulary.id%>' name='<%=vocabulary.id%>'> -->
+								</div>
+								<br/>
+								<input type="button" id='next<%=vocabulary.id%>' value='Next!' name='question' class='butt'/>
+							</div>
+							<% i = i+1%>
+							<% end%>
+							<div id="answer-error"></div>
+							<button class="submit-body" type="button"  onclick="submit()">Send</button> 
+							<div id="answer-error"></div>
+							<div id='result'></div>
+
+				<!-- <div class="quiz">
+					<div class="quiz-item" title="id cua quiz">
+						<div class="quiz-body">What is the meaning of 1</div>
+						<div class="answer-body">
+					
+							<div class="answer">
+								<input type="radio" name="answer1" value="1"><span class="answer-content">teacher</span>
+							</div>
+						}
+						</div>
+					</div>
+
+					<div id="answer-error">
+						
+					</div>
+					<button class="submit-body" type="button" onclick="submit()">	Send
+					</button>
+				</div> -->
+
+
+						</form>
+					</div>				
+				</div>
+
+				<script type="text/javascript" src="/assets/jquery-3.2.1.min.js"></script>
+
+
+				<script>
+				$(document).ready(function(){
+					// alert("asb");
+					
+				    var steps = $('form').find(".questions");	//lay object cau hoi
+				    var count = steps.length;	
+				    console.log("absdsd");				//so cau hoi
+				    steps.each(function(i){						//moi cau hoi//1,2,3,4,. //cach cau hoi 1 dau tien //co id=0
+				        console.log(i);
+				        hider=i+2;								// 2
+				        if (i == 0) {   						// neu ban dau
+				            $("#question_" + hider).hide();		// aanr cau tiep theo
+				            createNextButton(i);				//tao nut
+				        }
+				        else if(count==i+1){					//neu ma cau hoi cuoi cung thi step = so cau (1->..)
+				            var step=i + 1;
+				            //$("#next"+step).attr('type','submit');
+				            $("#next"+step).on('click',function(){		//thi submit cai next
+				 
+				               submit();
+				 
+				            });
+				        }
+				        else{
+				            $("#question_" + hider).hide();
+				            createNextButton(i);
+				        }
+				        
+				 
+				    });
+
+
+					var error = {
+						'answer' : function(str){
+							$('#answer-error')[0].innerHTML = str;
+						}
+					}
+
+				    function submit(){
+				   //  	var selectedQuiz = $('#quiz_form').eq(0).find('.questions');
+				   // 		console.log("abc");
+				   // 		var answer = [];
+				   // 		console.log(selectedQuiz.length);
+				   // 		for(var cnt = 1; cnt <= selectedQuiz.length; cnt++){
+				   // 			var selectedAnwser = selectedQuiz.eq(cnt).find('input[name=answer' + cnt + ']:checked');
+
+				   // 			if(selectedAnwser.length > 0){
+							// 	answer[selectedQuiz.eq(cnt).attr('title')] = parseInt(selectedAnwser.eq(1).val());
+							// }
+							// else {
+							// 	answer[selectedQuiz.eq(cnt).attr('title')] = -1;
+							// 	error.answer("You must select one answer first");
+							// }
+							// console.log(answer);
+							// console.log(answer);
+
+				   // 		}
+				         $.ajax({
+	                        type: "POST",
+	                        url: "/quizs/show",
+	                        data: $('form').serialize(),
+	                        success: function(msg) {
+	                          $("#quiz_form").addClass("hide");
+	                          $('#result').show();
+	                          $('#result').append(msg);
+	                        }
+				         });
+				 
+				    }
+				    function createNextButton(i){
+				        var step = i + 1;
+				        var step1 = i + 2;
+				        $('#next'+step).on('click',function(){
+				            $("#question_" + step).hide();
+				            $("#question_" + step1).show();
+				        });
+				    }
+				    setTimeout(function() {
+				          submit();
+				    }, 50000);
+				});
+				</script>
+				<!--<script type="text/javascript">
+					var error = {
+						'answer' : function(str){
+							$('#answer-error').eq(0).innerHTML(str);
+						}
+					}
+					function submit(){
+						var selectedForm = $('form[name=quiz]').eq(0);
+						var selectedGroup = selectedForm.find('input[name=answer]:checked');
+							console.log('dub');
+						if(selectedGroup.length == 1){
+							var answer = {
+								'quiz-id' : selectedForm.attr('title'),
+								'answer' : selectedGroup.eq(0).val()
+							};
+							console.log(answer);
+							$.get("http://192.168.100.136:3000", answer, function(){
+								// accepts: {
+								// mycustomtype: 'application/x-some-custom-type'
+								// }
+								// ,
+
+								// // Instructions for how to deserialize a `mycustomtype`
+								// converters: {
+								// 'text mycustomtype': function(result) {
+								// // Do Stuff
+								// return newresult;
+								// }
+								// },
+
+								// // Expect a `mycustomtype` back from server
+								// dataType: 'mycustomtype'
+							});
+						} else {
+							error.answer("You must select one answer first");
+						}
+					}
+				</script>-->
+				
+				 <!-- <script>
+					
+					var nd = $("#noi_dung_de").html();
+					var cau_hoi = nd.split('|');		//2: số câu
+					//alert(cau_hoi.length);
+					var html = ""; var tra_loi_dung = 0;
+					for(var i = 0;i<cau_hoi.length;i++)
+					{
+						var chi_tiet = cau_hoi[i].split(';');		//các câu phân cách nhau bởi dấu phẩy ở mỗi câu
+						//alert(chi_tiet);
+						for(var j=0;j<chi_tiet.length;j++)
+						{
+
+							if (j==0){
+								html +="<tr><td><b>" + (i+1) +"/15"+ ":</b></td><td> <b>" + chi_tiet[j].trim() + "</b></td></tr>";	//lấy phần tử đầu tiên trong mảng
+							}else 
+							{
+							html += "<tr><td></td><td id='" + (i + 1 + String.fromCharCode(64 + j)) + "'><input type='checkbox' name='" + (i + 1 + String.fromCharCode(64 + j)) + "' value='" + chi_tiet[j].trim() +"'> " + String.fromCharCode(64 + j) + ". " + chi_tiet[j].replace("[","").trim() + "</td></tr>";
+							//alert(i + 1 + String.fromCharCode(64 + j ))		//1A, 1B, 1C, 1D, 2A, 2B, 2C, 2D
+							}
+						}
+					}
+
+					$("#noi_dung_de").empty().append("<table>" + html + "</table><input type='submit' value='Hoàn tất' id='tra_loi_xong'>").fadeIn();
+					$("#noi_dung_de input").click(function(){ 
+						//Lấy tên của checkbox
+						var id = $(this).attr("name");
+
+						//Đổi màu nền câu trả lời
+
+						if ($(this).is(":checked")) $("td#" + id).css("background-color","yellow");
+						else $("td#" + id).css("background-color",""); 
+					});
+
+					var tong_so_diem = 0;
+					$("#tra_loi_xong").click(function(){
+						$('#noi_dung_de input').each(function () {
+							var id = $(this).attr("name");
+							var ctl = $(this).val();
+
+							//Hiển thị câu đúng với nền là màu đỏ
+							if (ctl[0] == '[') 
+							{
+								//alert($("td#" + id).css("background-color"));
+								if ($("td#" + id).css("background-color") == "rgb(255, 255, 0)")
+								{
+									tra_loi_dung++;
+									var char_first = $("td#" + id).text().trim().substring(0,1);
+									switch(char_first)
+									{
+										case 'A': {tong_so_diem += 1; break; }
+										case 'B': {tong_so_diem += 1; break; }
+										case 'C': {tong_so_diem += 1; break; }
+										case 'D': {tong_so_diem += 1; break; }
+										default: {break;}
+									}
+								}
+								else
+								{ 
+								$("td#" + id).css("background-color","red");
+								}
+							}
+						});
+						$("#noi_dung_de").append("<p>Trả lời đúng :" + (tra_loi_dung < 0 ? "0" : tra_loi_dung) + " câu</p>");
+						$("#noi_dung_de").append("<p>Số điểm của bạn là : " + tong_so_diem + "</p>");
+						$("#tra_loi_xong").fadeOut();
+					});
+				</script>  -->
+			</div>
+		</div>
+		
+	
+		<div class="clr"></div>
+		
+	</div>
+	
+</body>
+</html>
