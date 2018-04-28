@@ -55,7 +55,7 @@ class QuizsController < ApplicationController
     end 
     @socaudung = socaudung
 
-    message = "Số câu đúng:"+socaudung.to_s
+    message = socaudung.to_s
     @message = message
     # print(message)
   
@@ -64,32 +64,19 @@ class QuizsController < ApplicationController
 end
 
 
-
-
-
-		# $response=mysql_query("select id,word,mean from vocabularies");
-  #   	i=1;
-  #    	right_answer=0;
-  #    	wrong_answer=0;
-  #    	unanswered=0;
-  #    while($result=mysql_fetch_array($response)){ 
-  #          if($result['answer']==$_POST["$i"]){
-  #              right_answer++;
-  #          }else if($_POST["$i"]==5){
-  #              unanswered++;
-  #          }
-  #          else{
-  #              wrong_answer++;
-  #          }
-  #          $i++;
-  #    }
-  #    echo "<div id='answer'>";
-  #    echo " Số lần đúng  : <span class='highlight'>". $right_answer."</span><br>";
- 
-  #    echo " Số lần sai  : <span class='highlight'>". $wrong_answer."</span><br>";
- 
-  #    echo " Số câu hỏi không trả lời  : <span class='highlight'>". $unanswered."</span><br>";
-  #    echo "</div>";
-
-
-
+# <div class="result">
+#               <div style='font-size: 30px' id='result'></div>
+#               <div class="bo">
+#                 <h3>Bạn vừa mới ôn: <a href="quiz.html">Từ vựng sơ cấp 120 từ</a></h3>
+#               </div>
+#               <div class="caudung">
+#                 <h3><span>12/15 </span>câu đúng</h3>
+#               </div>
+#               <div class="thanhphantram">
+#                 <p>Đến lúc này, bạn đã nhớ 60% số từ trong nhóm từ này</p>
+#                 <div class="w3-light-grey w3-round">
+#                   <div class="w3-container w3-round w3-blue" style="width:60%">60%</div>
+#                 </div>
+#               </div>
+              
+#             </div>

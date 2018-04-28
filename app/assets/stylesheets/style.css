@@ -636,3 +636,50 @@ input[type=radio]:checked + label{
   right: 0;
 }
 /*END form QUIZ*/
+
+
+
+
+/*=================================Ket qua QUIZ===============================*/
+.result{
+  background: black;
+    padding: 1em;
+    
+   
+    height: 520px;
+}
+.caudung{margin-top: 20%;text-align:  center;}
+.caudung h3{
+
+color: white;
+
+font-size: 30px;
+}
+.caudung span{
+
+
+}
+.thanhphantram{
+      margin-left: 2%;
+      margin-right: 2%;
+      margin-top: 10%;
+}
+.thanhphantram p{
+     color: white;
+    font-size: 20px;
+    text-align: center;
+}
+.bo{
+
+}
+.bo h3{
+  color: white;
+  text-align:  center;
+  margin-top: 12px;
+  font-size: 20px;
+}
+.bo h3 a{
+      text-decoration: none;
+}
+
+/*END Ket qua QUIZ----------------------------------*/
