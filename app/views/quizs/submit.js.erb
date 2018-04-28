@@ -1,0 +1,19 @@
+$.ajax({
+    // type: "POST",
+    // url: "/quizs/show",
+    // data: $('form').serialize(),
+    success: function(msg) {
+       $("#quiz_form").addClass("hide");
+		$('#result').show();
+		$('#result').append("<%= @message %>");
+		console.log("<%= @message %>");
+		
+		
+		console.log("dapan<%= @dapan %>");
+		console.log("answer<%= @answer %>");
+		console.log("socaudung: <%= @socaudung %>");
+		
+		
+
+    }
+ });

@@ -123,7 +123,7 @@
 							teacher:;[giáo viên;quản ngục;nhà triết học, triết gia;chuyên viên thống kê.|
 							bike:;chủ/người làm ở trại chăn nuôi;giá biểu;tàn tích;[xe đạp
 						</div> -->
-						<form method='post' id='quiz_form'>
+						<form method='post' id='quiz_form' data-remote="true" action="/quizs/submit">
 							
 						<!--	<% i = 1%>
 							<% @answer.each do |answer| %>
@@ -137,36 +137,36 @@
 								<h2 id="question_<%=vocabulary.id%>"><%=vocabulary.word%></h2>
 								<div class='align'>
 									<div class="answer">
-										<input type="radio" value="1" id='radio1_<%= vocabulary.id%>' name='answer<%=i%>'>
+										<input type="radio" value="1" id='radio1_<%= vocabulary.id%>' name='answer<%=vocabulary.id%>'>
 										<label id='ans1_<%=vocabulary.id%>' for='1'><%=vocabulary.mean1%></label>
 									</div>
 									
 									
 									<div class="answer">
-										<input type="radio" value="2" id='radio2_<%=vocabulary.id%>' name='answer<%=i%>'>
+										<input type="radio" value="2" id='radio2_<%=vocabulary.id%>' name='answer<%=vocabulary.id%>'>
 										<label id='ans2_<%=vocabulary.id%>' for='1'><%=vocabulary.mean2%></label>
 									</div>
 									
 									<div class="answer">
-										<input type="radio" value="3" id='radio3_<%=vocabulary.id%>' name='answer<%=i%>'>
+										<input type="radio" value="3" id='radio3_<%=vocabulary.id%>' name='answer<%=vocabulary.id%>'>
 										<label id='ans3_<%=vocabulary.id%>' for='1'><%=vocabulary.mean3%></label>
 									</div>
 									
 									<div class="answer">
-										<input type="radio" value="4" id='radio4_<%=vocabulary.id%>' name='answer<%=i%>'>
+										<input type="radio" value="4" id='radio4_<%=vocabulary.id%>' name='answer<%=vocabulary.id%>'>
 										<label id='ans4_<%=vocabulary.id%>' for='1'><%=vocabulary.mean4%></label>
 									</div>
 									<!-- <input type="radio" checked='checked' value="5" style='display:none' id='radio4_<%=vocabulary.id%>' name='<%=vocabulary.id%>'> -->
 								</div>
 								<br/>
-								<input type="button" id='next<%=vocabulary.id%>' value='Next!' name='question' class='butt'/>
+								<input type="button" id='next<%=vocabulary.id%>' value='Next!' name='question' class='butt next-quiz'/>
 							</div>
 							<% i = i+1%>
 							<% end%>
 							<div id="answer-error"></div>
-							<button class="submit-body" type="button"  onclick="submit()">Send</button> 
+							<button class="submit-body" type="submit">Send</button> 
 							<div id="answer-error"></div>
-							<div id='result'></div>
+							
 
 				<!-- <div class="quiz">
 					<div class="quiz-item" title="id cua quiz">
@@ -186,9 +186,8 @@
 					<button class="submit-body" type="button" onclick="submit()">	Send
 					</button>
 				</div> -->
-
-
 						</form>
+						<div style='font-size: 30px' id='result'></div>
 					</div>				
 				</div>
 
@@ -252,16 +251,7 @@
 							// console.log(answer);
 
 				   // 		}
-				         $.ajax({
-	                        type: "POST",
-	                        url: "/quizs/show",
-	                        data: $('form').serialize(),
-	                        success: function(msg) {
-	                          $("#quiz_form").addClass("hide");
-	                          $('#result').show();
-	                          $('#result').append(msg);
-	                        }
-				         });
+				         
 				 
 				    }
 				    function createNextButton(i){

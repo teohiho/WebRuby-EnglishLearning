@@ -16,7 +16,57 @@ class QuizsController < ApplicationController
 		end
 		
 	end
+
+
+  def submit
+   # binding.pry
+    @message = "I am here!!!"
+
+    mean = [[]]
+    mean =Vocabulary.pluck(:mean1, :mean2, :mean3, :mean4, :mean)
+    # Đáp án của bài làm  
+    dapan = []
+    for i in 0..mean.length-1
+      for j in 0..mean[0].length-2
+        if mean[i][4] == mean[i][j]
+          dapan.push((j+1).to_s)
+        end
+      end
+    end
+    @dapan = dapan
+
+    # Bắt params bên form view
+    abc = {}
+    abc = params{:answer[i]}
+
+    # Câu trả lời của bạn
+    answer = []
+    for i in 1..mean.length
+      answer.push(abc["answer" + i.to_s])
+    end
+    @answer = answer #1,2,3,4
+
+    #Số câu bạn trả lời đúng
+    socaudung = 0
+    for i in 0..mean.length-1
+      if dapan[i] == answer[i]
+        socaudung = socaudung + 1
+      end
+    end 
+    @socaudung = socaudung
+
+    message = "Số câu đúng:"+socaudung.to_s
+    @message = message
+    # print(message)
+  
+
+  end   
 end
+
+
+
+
+
 		# $response=mysql_query("select id,word,mean from vocabularies");
   #   	i=1;
   #    	right_answer=0;
