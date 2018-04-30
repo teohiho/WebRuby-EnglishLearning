@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   # get 'quiz_user/:abc', to: 'quiz_user#quiz'
 
   root :to => 'quizs#show'
